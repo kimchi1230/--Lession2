@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 27, 2022 lúc 03:46 AM
+-- Thời gian đã tạo: Th2 27, 2022 lúc 04:44 AM
 -- Phiên bản máy phục vụ: 10.4.14-MariaDB
 -- Phiên bản PHP: 7.4.10
 
@@ -20,6 +20,34 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `manage_product`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `category`
+--
+
+CREATE TABLE `category` (
+  `id_cate` int(11) NOT NULL,
+  `name_cate` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `category`
+--
+
+INSERT INTO `category` (`id_cate`, `name_cate`) VALUES
+(1, 'Giày'),
+(2, 'Gear'),
+(3, 'Đồ điện tử'),
+(4, 'Đồ gia dụng'),
+(5, 'Thức ăn nhẹ'),
+(6, 'Thực phẩm tươi sống'),
+(9, 'Đồ nướng'),
+(10, 'Trái cây'),
+(11, 'Laptop'),
+(13, 'Hải sản'),
+(14, 'Rau củ');
 
 -- --------------------------------------------------------
 
@@ -66,6 +94,12 @@ INSERT INTO `product` (`id`, `name`, `id_cate`, `img`) VALUES
 --
 
 --
+-- Chỉ mục cho bảng `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`id_cate`);
+
+--
 -- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
@@ -75,6 +109,12 @@ ALTER TABLE `product`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `category`
+--
+ALTER TABLE `category`
+  MODIFY `id_cate` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT cho bảng `product`
